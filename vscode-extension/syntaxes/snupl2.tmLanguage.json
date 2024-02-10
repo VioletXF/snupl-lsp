@@ -1,0 +1,157 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.snupl2",
+  "name": "SnuPL2",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#strings"
+    },
+    { "include": "#types" },
+    {
+      "include": "#identifiers"
+    },
+    {
+      "include": "#whitespace"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "/\\*",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.snupl2"
+            }
+          },
+          "end": "\\*/",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.snupl2"
+            }
+          },
+          "name": "comment.block.snupl2"
+        },
+        {
+          "captures": {
+            "1": {
+              "name": "punctuation.definition.comment.snupl2"
+            }
+          },
+          "match": "//.*$\\n?",
+          "name": "comment.line.snupl2"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "match": "\\b[a-zA-Z_]\\w*\\b",
+          "name": "variable.other.snupl2"
+        },
+        {
+          "match": "\\b(?:DIM|DOFS|ReadInt|ReadLong|WriteInt|WriteLong|WriteChar|WriteStr|WriteLn)\\b",
+          "name": "support.function.snupl2"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "\\b(?:begin|const|continue|do|else|end|false|for|function|if|module|of|procedure|return|then|true|var|while)\\b",
+          "name": "keyword.control.snupl2"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "\\b(?:0|[1-9]\\d*)(?:\\.\\d+)?(?:[eE][+-]?\\d+)?L?\\b",
+          "name": "constant.numeric.snupl2"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "(?:[+\\-*/=<>&|#!]|:=)",
+          "name": "keyword.operator.snupl2"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "'",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.snupl2"
+            }
+          },
+          "end": "'",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.snupl2"
+            }
+          },
+          "name": "string.quoted.single.snupl2",
+          "patterns": [
+            {
+              "match": "\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|u\\{[0-9A-Fa-f]+\\}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)",
+              "name": "constant.character.escape.snupl2"
+            }
+          ]
+        },
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.snupl2"
+            }
+          },
+          "end": "(\")|((?:[^\\\\n])$)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.snupl2"
+            }
+          },
+          "name": "string",
+          "patterns": [
+            {
+              "match": "\\\\(x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4}|u\\{[0-9A-Fa-f]+\\}|[0-2][0-7]{0,2}|3[0-6][0-7]?|37[0-7]?|[4-7][0-7]?|.|$)",
+              "name": "constant.character.escape.snupl2"
+            }
+          ]
+        }
+      ]
+    },
+    "whitespace": {
+      "patterns": [
+        {
+          "match": "\\s+",
+          "name": "invalid.illegal.whitespace.snupl2"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "match": "\\b(?:boolean|char|integer|longint)\\b",
+          "name": "storage.type.primitive.snupl2"
+        }
+      ]
+    }
+  }
+}

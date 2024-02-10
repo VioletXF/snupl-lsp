@@ -1,0 +1,4 @@
+/obj/*.o
+snupld
+/snuplc
+.deps/

@@ -1,0 +1,46 @@
+{
+	"comments": {
+		"lineComment": "//",
+		"blockComment": ["/*", "*/"]
+	},
+	"brackets": [
+		["then", "end"],
+		["do", "end"],
+		["begin", "end"],
+		["{", "}"],
+		["[", "]"],
+		["(", ")"]
+	],
+
+
+	"autoClosingPairs": [
+		{ "open": "then", "close": "end", "notIn": ["string"]},
+		{ "open": "then ", "close": " end", "notIn": ["string"]},
+		{ "open": "do", "close": "end", "notIn": ["string"]},
+		{ "open": "do ", "close": " end", "notIn": ["string"]},
+		{ "open": "begin", "close": "end", "notIn": ["string"]},
+		{ "open": "begin ", "close": " end", "notIn": ["string"]},
+		{ "open": "{", "close": "}" },
+		{ "open": "[", "close": "]" },
+		{ "open": "(", "close": ")" },
+		{ "open": "'", "close": "'", "notIn": ["string", "comment"] },
+		{ "open": "\"", "close": "\"", "notIn": ["string"] },
+		{ "open": "`", "close": "`", "notIn": ["string", "comment"] },
+		{ "open": "/**", "close": " */", "notIn": ["string"] }
+	],
+	"autoCloseBefore": ";:.,=}])>` \n\t",
+	"surroundingPairs": [
+		["{", "}"],
+		["[", "]"],
+		["(", ")"],
+		["'", "'"],
+		["\"", "\""],
+		["`", "`"]
+	],
+	"folding": {
+		"markers": {
+			"start": "^\\s*// region:\\b",
+			"end": "^\\s*// endregion\\b"
+		}
+	}
+  }
