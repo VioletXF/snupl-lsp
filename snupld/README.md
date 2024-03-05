@@ -12,6 +12,9 @@ snupld is a language server for SnuPL/2 which supports the following features:
 - Document Symbol
 
 ## Installation
+
+You can get a prebuilt binary [here](https://github.com/VioletXF/snupl-lsp/releases/). If you want to build snupld with your snuplc implementation, follow the steps below:
+
 First you need to implement following methods in `snuplc` since `snupld`'s scope detection is implemented in a very dumb way (or feel free to implement & contribute your own scope detection in `snupld`):
 ```cpp
 // return the very first token of the statement sequence (e.g. "begin")
